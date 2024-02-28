@@ -2,7 +2,7 @@
 
 #Secure Planet LLC
 
-import urllib2
+import urllib.request
 import re
 import re
 import os, sys
