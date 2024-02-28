@@ -70,7 +70,7 @@ for site in sites:
         site = site.strip()
         print ("[*] Downloading Content For : " + site)
         x_arr = []
-        response = urllib2.urlopen(site)
+        response = urllib.request.urlopen(site)
         response.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0')]
         x = stripHTMLTags(response.read())
 	#Replace junk found in our response
