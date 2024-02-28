@@ -14,7 +14,7 @@ def banner():
     global banner_file
     open_banner = open(banner_file, "r")
     for line in open_banner:
-        print line.rstrip()
+        print(line.rstrip())
     open_banner.close()
 
 def stripHTMLTags (html):
@@ -68,7 +68,7 @@ except:
 for site in sites:
     try:
         site = site.strip()
-        print "[*] Downloading Content For : " + site
+        print ("[*] Downloading Content For : " + site)
         x_arr = []
         response = urllib2.urlopen(site)
         response.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0')]
@@ -87,11 +87,11 @@ for site in sites:
                 y = y[2:]
               y_arr.append(y)
     except Exception as e:
-        print "[*] Error: " + str(e)
+        print ("[*] Error: " + str(e))
         pass
 
 y_arr_unique = OrderedDict.fromkeys(y_arr).keys()
-print "[*] Processing List"
+print ("[*] Processing List")
 f_write = open("passwordList.txt","w")
 for yy in y_arr_unique:
     if yy.strip().isdigit():
@@ -100,6 +100,6 @@ for yy in y_arr_unique:
       #print yy.strip()
       f_write.write(yy.strip() + "\n")
 f_write.close()
-print "[*] Wordlist Generation Complete."
-print "[*] Output Located: passwordList.txt"
-print "[*] Total Count of Passwords >> " + str(len(y_arr_unique))
+print ("[*] Wordlist Generation Complete.")
+print ("[*] Output Located: passwordList.txt")
+print ("[*] Total Count of Passwords >> " + str(len(y_arr_unique)))
